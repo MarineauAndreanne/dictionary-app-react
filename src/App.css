@@ -9,3 +9,8 @@ header h1 {
 .Dictionary-logo {
   width: 100px;
 }
+
+footer {
+  font-size: 10px;
+  margin-top: 50px;
+}
