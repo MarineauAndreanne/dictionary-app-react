@@ -13,7 +13,16 @@ function App() {
         <main>
           <Search />
         </main>
-        <footer>Open-source code by Andréanne Marineau</footer>
+        <footer>
+          <a
+            href="https://github.com/MarineauAndreanne/dictionary-app-react"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open-source code
+          </a>{" "}
+          by Andréanne Marineau
+        </footer>
       </div>
     </div>
   );
