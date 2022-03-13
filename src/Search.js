@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 import "./Search.css";
 
 export default function Search() {
   const [word, setWord] = useState("");
+  const [results, setResults] = useState(null);
 
   function handleApiResponse(response) {
-    console.log(response.data[0]);
+    setResults(response.data[0]);
   }
 
   function searchWord(event) {
@@ -31,6 +33,7 @@ export default function Search() {
         />
         <button className="btn btn-dark">Search</button>
       </form>
+      <Results results={results} />
     </div>
   );
 }
