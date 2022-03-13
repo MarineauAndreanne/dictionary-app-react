@@ -1,16 +1,36 @@
-header {
+.App .Container {
+  padding: 40px 30px;
+}
+
+.App {
+  background-color: #f4f4f4;
+}
+
+.App header {
   padding: 20px;
   text-align: center;
 }
-header h1 {
-  display: inline;
-  margin-left: 20px;
+.App .Dictionary-logo {
+  position: relative;
+  margin-top: -20px;
+  width: 80px;
 }
-.Dictionary-logo {
-  width: 100px;
+.App header h1 {
+  font-size: 50px;
+  font-weight: 200;
+  display: inline;
+  margin: 0 20px;
 }
 
-footer {
+.App footer {
   font-size: 10px;
-  margin-top: 50px;
+  margin-top: 10px;
+}
+.App footer a {
+  color: #d76463;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+.App footer a:hover {
+  color: #eb7c7c;
 }

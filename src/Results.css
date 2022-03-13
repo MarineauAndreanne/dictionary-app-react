@@ -1,0 +1,27 @@
+.Results h2 {
+  margin-bottom: 10px;
+}
+
+.Results a {
+  background-color: #d76463;
+  border-radius: 50px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 15px;
+  margin-right: 10px;
+  outline: none;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+.Results a:hover {
+  background-color: #eb7c7c;
+}
+
+.Results h3 {
+  display: inline;
+  font-size: 20px;
+  opacity: 0.6;
+}
