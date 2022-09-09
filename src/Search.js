@@ -1,47 +1,44 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Results from "./Results";
-import Photos from "./Photos";
-import { delay } from "./utils";
+import React, { useState, useEffect } from "react"
+import axios from "axios"
+import Results from "./Results"
+import Photos from "./Photos"
 
-import "./Search.css";
+import "./Search.css"
 
 export default function Search(props) {
-  const [word, setWord] = useState(props.defaultWord);
-  const [results, setResults] = useState(null);
-  const [photos, setPhotos] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [word, setWord] = useState(props.defaultWord)
+  const [results, setResults] = useState(null)
+  const [photos, setPhotos] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    searchWord();
-  }, []);
+    searchWord()
+  }, [])
 
   async function searchWord() {
-    setLoading(true);
+    setLoading(true)
 
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    let wordResponse = await axios.get(apiUrl);
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+    let wordResponse = await axios.get(apiUrl)
 
     let pexelsApiKey =
-      "563492ad6f9170000100000188ecca2cc54c46a39ba8946d5b450d86";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
-    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
-    let pexelsResponse = await axios.get(pexelsApiUrl, { headers: headers });
+      "563492ad6f9170000100000188ecca2cc54c46a39ba8946d5b450d86"
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=9`
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` }
+    let pexelsResponse = await axios.get(pexelsApiUrl, { headers: headers })
 
-    await delay(1500);
-
-    setResults(wordResponse.data[0]);
-    setPhotos(pexelsResponse.data.photos);
-    setLoading(false);
+    setResults(wordResponse.data[0])
+    setPhotos(pexelsResponse.data.photos)
+    setLoading(false)
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
-    searchWord();
+    event.preventDefault()
+    searchWord()
   }
 
   function handleWordChange(event) {
-    setWord(event.target.value);
+    setWord(event.target.value)
   }
 
   return (
@@ -71,5 +68,5 @@ export default function Search(props) {
         </>
       )}
     </div>
-  );
+  )
 }
